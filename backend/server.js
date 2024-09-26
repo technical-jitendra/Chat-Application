@@ -10,6 +10,8 @@ import userRoutes from "./routes/user.routes.js";
 import connectToMongoDB from "./db/connectToMongoDB.js";
 import { app, server } from "./socket/socket.js";
 
+const backendUrl = process.env.VITE_BACKEND_URL || 'http://localhost:5000';
+
 dotenv.config();
 
 const __dirname = path.resolve();
