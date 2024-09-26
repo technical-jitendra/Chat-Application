@@ -10,12 +10,15 @@ import userRoutes from "./routes/user.routes.js";
 import connectToMongoDB from "./db/connectToMongoDB.js";
 import { app, server } from "./socket/socket.js";
 
-const backendUrl = process.env.VITE_BACKEND_URL || 'http://localhost:5000';
-
+// Load environment variables first
 dotenv.config();
 
 const __dirname = path.resolve();
-// PORT should be assigned after calling dotenv.config() because we need to access the env variables. Didn't realize while recording the video. Sorry for the confusion.
+
+// Declare backendUrl after dotenv.config() to ensure it can access the environment variables
+const backendUrl = process.env.VITE_BACKEND_URL || 'http://localhost:5000';
+
+// PORT should be assigned after calling dotenv.config()
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json()); // to parse the incoming requests with JSON payloads (from req.body)
