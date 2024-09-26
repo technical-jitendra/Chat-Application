@@ -16,7 +16,7 @@ dotenv.config();
 const __dirname = path.resolve();
 
 // Declare backendUrl after dotenv.config() to ensure it can access the environment variables
-const backendUrl = process.env.VITE_BACKEND_URL || 'http://localhost:5000';
+const backendUrl = process.env.BACKEND_URL || 'http://localhost:5000';
 
 // PORT should be assigned after calling dotenv.config()
 const PORT = process.env.PORT || 5000;
